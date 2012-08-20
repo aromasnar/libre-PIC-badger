@@ -1,0 +1,16 @@
+# Test File to test configuration read .. being used in unit tests. 
+
+book1:
+	{
+		name: "My book 1",
+		choices:
+			{
+				'2009':'2009',
+				'2007':'2007',
+			}
+	}
+
+booknames: @"testBookNames.txt"
+otherBook: @"testConfigFile2.txt"
+		
+		

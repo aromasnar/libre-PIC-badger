@@ -1,0 +1,49 @@
+{% extends "page_template.html" %}
+{% block extrahead %}
+	<link type="text/css" rel="stylesheet" href="static/css/libre-data-caster.css">  
+	 
+	<script type="text/javascript" language="javascript">
+	var DATACASTER={
+	     "base": "../../../static/config/",
+	     "save_service":"../../../save-cast",
+	     "load_service":"load-cast",
+	     "load_url_service":"../../../load-cast-url",
+	     "publish_service":"../../../pub-cast-email",
+	     "saveCastCallback":function(value){
+	    	   
+				window.open("../../../bounce/"+value);
+			},
+		 "save_cast_url":"save-cast-no-save/data-cast-name.xml"
+	
+	}
+	</script>    
+	<script type="text/javascript" language="javascript" src="static/gwt/libre/libre.nocache.js"></script>
+	<script type="text/javascript" language="javascript" src="static/config/gcmd_params.js"></script>
+	<style>
+	   #data-caster {
+	       border: 0 !important;
+	   }
+	   #libre-data-caster-widget {
+	       background: #F8F8F8;
+	   }
+	   #dc_head {
+	       float: right;
+	   }
+	   .dc_tabs, table.gwt-DecoratedTabBar, .gwt-DecoratedTabBar table {
+	       margin: 0;
+	   }
+	</style>
+{% endblock %}
+
+{% block content %}
+<div id="libre-data-caster-widget">
+
+<div id="dc_head"></div>
+
+<div id="dc_tool_bar"></div>
+
+<div id="data-caster"></div>
+
+
+</div>
+{% endblock %}

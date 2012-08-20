@@ -1,0 +1,86 @@
+<data-cast>
+	<general_info>
+		<resource_id>test_1</resource_id>
+		<title>Geoff_Title</title>
+		<creator>Geoff_Creator</creator>
+		<place>Geoff_Place</place>
+		<version>888</version>
+		<publisher>Geoff_pub</publisher>
+		<summary>Geoff_summer</summary>
+		<online_resource>http://bv22.org/abc.xml</online_resource>
+		<release_date>Sat Jul 31 12:00:00</release_date>
+		<progress>In Progress</progress>
+		<language>Finish</language>
+	</general_info>
+	<contact_info>
+		<contact>
+			<contact-type>Investigator</contact-type>
+			<title>MS</title>
+			<first_name>Alexander</first_name>
+			<middle_name>The</middle_name>
+			<last_name>Great</last_name>
+			<department>Montegori Department</department>
+			<institute>Abu Dabi Institute</institute>
+			<address>126 Lichen Lane</address>
+			<city>Boulder</city>
+			<state>CO</state>
+			<zip>88881-1234</zip>
+			<country>USA</country>
+			<phone type='primary'>333 333 3333</phone>
+			<phone type='secondary'>555 555 5555</phone>
+			<email type='primary'>abvc@111.net</email>
+			<email type='secondary'>asdf@asdf.fcw</email>
+			<fax>888 888 8888</fax>
+		</contact>
+		<contact>
+			<contact-type>Investigator</contact-type>
+			<title>MS</title>
+			<first_name>Geoff</first_name>
+			<middle_name>D</middle_name>
+			<last_name>Anderson</last_name>
+			<department>Redundancey Department</department>
+			<institute>NSIDC Institute</institute>
+			<address>126 Lichen Lane</address>
+			<city>Boulder</city>
+			<state>CO</state>
+			<zip>88881-1234</zip>
+			<country>USA</country>
+			<phone type='primary'>333 333 3333</phone>
+			<phone type='secondary'>555 555 5555</phone>
+			<email type='primary'>abvc@111.net</email>
+			<email type='secondary'>asdf@asdf.fcw</email>
+			<fax>888 888 8888</fax>
+		</contact>
+	</contact_info>
+	<science_keywords>
+		<gcmd_parameter>
+			<category>EARTH SCIENCE</category>
+			<topic>ATMOSPHERE</topic>
+			<term>AIR QUALITY</term>
+			<level_0>LEAD</level_0>
+		</gcmd_parameter>
+		<gcmd_parameter>
+			<category>SPACE SCIENCE</category>
+			<topic>ASTROPHYSICS</topic>
+			<term>COSMIC RAYS</term>
+			<level_0>MOON SHADOW</level_0>
+		</gcmd_parameter>
+		<gcmd_parameter>
+			<category>EARTH SCIENCE</category>
+			<topic>BIOLOGICAL CLASSIFICATION</topic>
+			<term>ANIMALS/VERTEBRATES</term>
+			<level_0>BIRDS</level_0>
+			<level_1>GREBES</level_1>
+		</gcmd_parameter>
+		<gcmd_parameter>
+			<category>EARTH SCIENCE</category>
+			<topic>BIOLOGICAL CLASSIFICATION</topic>
+			<term>ANIMALS/VERTEBRATES</term>
+			<level_0>FISH</level_0>
+			<level_1>RAY-FINNED FISHES</level_1>
+			<level_2>PERCH-LIKE FISHES</level_2>
+		</gcmd_parameter>
+	</science_keywords>
+	<spatial_coverage>
+	</spatial_coverage>
+</data-cast>

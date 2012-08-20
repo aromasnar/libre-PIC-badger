@@ -1,0 +1,214 @@
+<!-- 
+Author:  Azhar Sikander
+Date:    May 26, 2010
+
+This document describes the input and outputs the three APIs Polar Informations Common (PIC) is providing for badging and sharing your data. 
+
+	1. An API that answers the questions "What are the licenses? What are their Ids and Names?" 
+	2. An API that answers the question "What information does the user need to provide to generate a particular license?" 
+	3. An API that will generate and return license, in user specified format, based on the information provided by the user. 
+	
+TABLE OF CONTENTS:
+-------------------
+1-1. XML OUTPUT OF LICENSES QUERY
+2-1. XML OUTPUT FOR CC ZERO WAVIER ' FIELDS
+2-2. XML OUTPUT FOR CC By License ' FIELDS
+3-1. LICENSE GENERATION API INPUT
+	- for pic_cc_zero
+	- for pic_cc_by
+3-2. LICENSE GENERATION API OUTPUT
+	- html
+	- xml
+-->
+
+<!-- 
+
+1. An API that answers the questions "What are the licenses? What are their Ids and Names?" 
+
+API URI:  
+========
+
+http://testservername.org/picbadgeapi/licenses/
+
+======XML OUTPUT OF LICENSES QUERY====== 
+-->
+<licenses>
+	<license id="pic_cc_zero">PIC CC Zero Waiver</license>
+	<license id="pic_cc_by">PIC CC By License</license>
+</licenses>
+
+<!-- 
+
+2. An API that answers the question "What information does the user need to provide to generate a particular license?" 
+
+API URI:  
+========
+
+http://testservername.org/picbadgeapi/licenses/<licenseID>
+
+NOTE: please see Creative Commons website for various field descriptions. http://api.creativecommons.org/docs/readme_staging.html
+-->
+	
+<!-- ======XML OUTPUT FOR CC ZERO WAVIER ' FIELDS====== -->
+<licenseClass id="pic_cc_zero">
+	<field id="title">
+		<label>Title of work</label>
+		<description>.....</description>
+	</field>
+	<field id="attribution_url">
+		<label>Your URL</label>
+		<description>.....</description>
+	</field>
+	<field id="terrority">
+		<label> Territory</label>
+		<description>.....</description>
+	</field>
+	<field id="creator">
+		<label>Publisher</label>
+		<description>....</description>
+	</field>	
+	<field id="outputType">
+		<label>Waiver's output format</label>
+		<description>.....</description>
+		<type>enum</type>
+		<enum id="html">
+			<label>HTML</label>
+		</enum>
+		<enum id="xml">
+			<label>XML having HTML and RDF</label>
+		</enum>
+	</field>
+</licenseClass>
+
+<!-- ======XML OUTPUT FOR CC By License ' FIELDS====== -->
+<licenseClass id="pic_cc_by">
+	<field id="title">
+		<label>Title of work</label>
+		<description>.....</description>
+	</field>
+	<field id="workurl">
+		<label>Attribute work to URL</label>
+		<description>.....</description>
+	</field>
+	<field id="sourceurl">
+		<label>Source work URL</label>
+		<description>.....</description>
+	</field>
+	<field id="type">
+		<label>Format of Work</label>
+		<description>.....</description>
+	</field>
+	<field id="year">
+		<label>Year</label>
+		<description>.....</description>
+	</field>
+	<field id="description">
+		<label> Description</label>
+		<description>.....</description>
+	</field>
+	<field id="creator">
+		<label>Attribute work to name</label>
+		<description>....</description>
+	</field>
+	<field id="holder">
+		<label>Holder</label>
+		<description>.....</description>
+	</field>	
+	<field id="outputType">
+		<label>License's output format</label>
+		<description>.....</description>
+		<type>enum</type>
+		<enum id="html">
+			<label>HTML</label>
+		</enum>
+		<enum id="xml">
+			<label>XML having HTML and RDF</label>
+		</enum>
+	</field>
+</licenseClass>
+
+<!-- 3. An API that will generate and return license, in user specified format, based on the information provided by the user. 
+
+API URI:  
+========
+
+http://testservername.org/picbadgeapi/licenses/<licenseID>/issue
+
+NOTE: only POST is allowed and "one of following input xmls" is expected.
+
+NOTE:  A python example is listed at the end of this document.
+
+======== LICENSE GENERATION API INPUT ====== 
+
+## I put value for some fields to indicate that these are required field.
+-->
+
+<!-- ======XML INPUT FOR CC ZERO Waiver====== -->
+<answers>
+	<work-info>
+		<title></title>
+		<attribution_url></attribution_url>
+		<territory></territory>
+		<creator></creator>				
+	</work-info>
+	<outputType>html</outputType>
+</answers>
+
+<!-- ======XML INPUT FOR CC By License====== -->
+<answers>
+	<work-info>
+		<title></title>
+		<workurl>url</workurl>
+		<sourceurl></sourceurl>
+		<type></type>
+		<description></description>
+		<creator></creator>
+		<holder></holder>		
+	</work-info>
+	<outputType>html</outputType>
+</answers>
+
+<!-- ======== LICENSE GENERATION API OUTPUT ======
+
+HTML output
+------------ -->
+<html><a href="http://polarcommons.org/ethics-and-norms-of-data-sharing.php"><img src="http://polarcommons.org/images/PIC_print_small.png"/></a><a href="http://creativecommons.org/licenses/by/3.0/" rel="license"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by/3.0/88x31.png" style="border-width:0"/></a><br/> This <span href="http://purl.org/dc/dcmitype/Text" rel="dc:type" xmlns:dc="http://purl.org/dc/elements/1.1/">work</span> by <a href="xccccccccc" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">xccccccccc</a> is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 Unported License</a></html>
+
+<!-- XML output (A Sample output from CC)
+----------- -->
+<result>
+ <license-uri>http://creativecommons.org/licenses/by/3.0/us/</license-uri>
+ <license-name>Attribution 3.0 United States</license-name>
+ <rdf>
+   <rdf:RDF xmlns="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Work rdf:about="">
+     <license rdf:resource="http://creativecommons.org/licenses/by/3.0/us/"/>
+    </Work>
+    <License rdf:about="http://creativecommons.org/licenses/by/3.0/us/">
+     <permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+     <permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+     <requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+     <requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+     <permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+    </License>
+   </rdf:RDF>
+ </rdf>
+ <licenserdf>
+  <rdf:RDF xmlns="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <License rdf:about="http://creativecommons.org/licenses/by/3.0/us/">
+     <permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+     <permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+     <requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+     <requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+     <permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+   </License>
+  </rdf:RDF>
+ </licenserdf>
+ <html><a href="http://polarcommons.org/ethics-and-norms-of-data-sharing.php"><img src="http://polarcommons.org/images/PIC_print_small.png"/></a><a href="http://creativecommons.org/licenses/by/3.0/" rel="license"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by/3.0/88x31.png" style="border-width:0"/></a><br/> This <span href="http://purl.org/dc/dcmitype/Text" rel="dc:type" xmlns:dc="http://purl.org/dc/elements/1.1/">work</span> by <a href="xccccccccc" property="cc:attributionName" rel="cc:attributionURL" xmlns:cc="http://creativecommons.org/ns#">xccccccccc</a> is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 Unported License</a></html>
+</result>
+
+<!-- Sample Code to Generate the Badge (Python)
+
+where MyXMLAnswers is the one of the input xml mentioned for this API-->
+	myPICLicense = urllib2.urlopen(APIURL, data="answers = %s" % MyXMLAnswers).read()	
+	

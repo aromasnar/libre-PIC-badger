@@ -1,0 +1,35 @@
+<form id= "{{ formID }}" >
+
+	{% for field in dataForm %}
+		
+		<div style="padding: 5px 0px;">	
+			
+			{% ifequal field.label "Agreement" %}
+				<h3>* Sign the Creative Commons Agreement</h3>
+				<p><em>You are required to indicate that you have read and understood the Creative Commons agreement before you can preview and save your badge.</em></p>
+			{% else %}			
+				<label for="{{ field.label }}">{% if field.field.required %}*{% endif %}
+					{{ field.label_tag|safe }}
+				</label> 
+				{% if field.errors %}
+					{% for error in field.errors %}
+						<span style="color: red; font-size : 11pt">&nbsp;**{{ error|escape }}&nbsp;</span>
+					{% endfor %}					
+				{% endif %}
+				
+			{% endifequal %}
+			
+			{% if field.help_text %}
+				<img src="/libre/images/libre_help_off.png"
+				 alt="More information"
+				 title= "{{ field.help_text }}" />
+			{% endif %}		
+			<!-- <label>*{{ field.label_tag }} </label> -->
+			<br/>
+			{{ field }} 
+			
+		</div>
+		
+	{% endfor %}
+	
+</form>             

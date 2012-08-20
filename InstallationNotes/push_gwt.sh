@@ -1,0 +1,1 @@
+rsync -a --exclude .svn  --delete ./libre-datacaster-gwt/war/libre/ /DEV/INTERNET/libre/gwt/libre/

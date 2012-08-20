@@ -1,0 +1,73 @@
+<data-cast>
+	<general_info>
+		<resource_id>A-TEST-1</resource_id>
+		<title>test-title</title>
+		<creator>test-creator</creator>
+		<place>test-place</place>
+		<version>999</version>
+		<publisher>test-publisher</publisher>
+		<summary>test-summary</summary>
+		<online_resource>test-url</online_resource>
+		<release_date>Thu Jul 22 15:17:2</release_date>
+		<progress>Completed</progress>
+		<language>Navajo</language>
+	</general_info>
+	<contact_info>
+		<contact>
+			<contact-type>Investigator</contact-type>
+			<title>MRS</title>
+			<first_name>First</first_name>
+			<middle_name>Middle</middle_name>
+			<last_name>Last</last_name>
+			<department>Redundancey Department</department>
+			<institute>Higher Learning Institute</institute>
+			<address>126 Lichen Lane</address>
+			<city>Golden</city>
+			<state>UT</state>
+			<zip>12345-1234</zip>
+			<country>USA</country>
+			<phone type='primary'>555 555 5555</phone>
+			<phone type='secondary'>333 333 3333</phone>
+			<email type='primary'>fakeemail@example.com</email>
+			<email type='secondary'>secondary@example.com</email>
+			<fax>888 888 8888</fax>
+		</contact>
+		<contact>
+			<contact-type>Busy Body</contact-type>
+			<title>MRS</title>
+			<first_name>Ralph</first_name>
+			<middle_name>Nathanial</middle_name>
+			<last_name>Smith</last_name>
+			<department>Special Department</department>
+			<institute>Institute 1</institute>
+			<address>98 Lakeshore Drive</address>
+			<city>Boulder</city>
+			<state>CO</state>
+			<zip>12345-1234</zip>
+			<country>USA</country>
+			<phone type='primary'>555 555 5555</phone>
+			<phone type='secondary'>333 333 3333</phone>
+			<email type='primary'>primary@example.com</email>
+			<email type='secondary'>seconadry@example.com</email>
+			<fax>888 888 8888</fax>
+		</contact>
+	</contact_info>
+	<science_keywords>
+		<gcmd_parameter>
+			<category>EARTH SCIENCE</category>
+			<topic>ATMOSPHERE</topic>
+			<term>ATMOSPHERIC CHEMISTRY</term>
+			<level_0>CARBON AND HYDROCARBON COMPOUNDS</level_0>
+			<level_1>CARBON DIOXIDE</level_1>
+		</gcmd_parameter>
+		<gcmd_parameter>
+			<category>EARTH SCIENCE</category>
+			<topic>ATMOSPHERE</topic>
+			<term>ATMOSPHERIC CHEMISTRY</term>
+			<level_0>CARBON AND HYDROCARBON COMPOUNDS</level_0>
+			<level_1>METHANE</level_1>
+		</gcmd_parameter>
+	</science_keywords>
+	<spatial_coverage>
+	</spatial_coverage>
+</data-cast>

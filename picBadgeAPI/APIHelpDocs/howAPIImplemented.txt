@@ -1,0 +1,4 @@
+Please read this post to learn how I implemented the api.
+
+
+http://bitbucket.org/jespern/django-piston/wiki/Home

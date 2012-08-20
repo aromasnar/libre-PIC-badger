@@ -1,0 +1,5 @@
+# Countries List for the "Territory Field in PIC CC Zero License's Form
+# ---------------------------------------------------------------------- 
+	'book1' : 'book 1' ,
+	'book2' : 'book 2' ,
+	'book3' : 'book 3'

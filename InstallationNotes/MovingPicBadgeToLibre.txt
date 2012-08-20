@@ -1,0 +1,30 @@
+Author: Azhar Sikander
+April 20, 2010
+
+Moving PICBAGE TO LIBRE WEBSITE:
+================================
+
+Steps:
+------
+
+NOTE: Currently, I localized everything for testing purposes.
+
+1. In base template (/picbadge/templates/page_template.html)
+	- make sure CSS and JAVASCRIPT links are correct.
+	- the base templates contains following tags\
+		<head> 
+			{% block extrahead %}{% endblock %}
+		</head>
+		
+		and
+		
+		<body>
+			<!--NOTE:  UNDER CONTENT WRAPPER -->
+			{% block content %}{% endblock %}
+		</body>
+	
+	
+2. All the other templates have include line on the top .. and have the same name as of the base template ( which is "page_template.html" currently).
+
+3. READ THE "READ ME" FOR THE PROJECT FOR PROJECT SPECFIC SETTINGS if you have moved it to new location.
+	 

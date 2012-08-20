@@ -1,0 +1,173 @@
+{% extends "page_template.html" %}
+{% block extrahead %}
+	<script type="text/javascript" src="js/cc_license_.js"></script>
+{% endblock %}
+
+{% block content %}
+
+
+<h1>PIC Rights and Badging Tool</h1>
+<h2>Create a Badge for Your Data</h2>
+
+<!-- start form container div -->
+
+<div style="width: 600px; background: #F8F8F8; border: 1px solid #CCCCCC; padding: 20px; margin-top: 20px;">
+
+<!-- start Libre PIC Licensing and Badging generator form-->
+
+<form>
+<h3 style="margin-top: 0;">Choose a Badge Type &nbsp; <img src="/libre/images/libre_help_off.png" alt="More information about Creative Commons License types" title="We offer two types of badges. Both badges request the adherence to the PIC norms. See the polarcommons.org Web site for more information." /></h3>
+<p>
+    <input type="radio"
+           value="CC0"
+           name="form_toggle"
+           onclick="LIBRE.showForm1();"
+           checked="checked" />
+    <strong>Waiver</strong> <img src="/libre/images/libre_help_off.png" alt="More information about the waiver abdge." title="This waiver places your data in the public domain." /></p>
+<p>
+    <input type="radio"
+           name="form_toggle"
+           onclick="LIBRE.showForm2();"
+           value="CC-By" />
+
+    <strong>License Requiring Attribution</strong>
+    <img src="/libre/images/libre_help_off.png"
+         alt="More information about the License Requiring Attribution"
+         title="This legal license may be used if you are not able to place your data in the public domain." /></p>
+<h3>Briefly Describe Your Data &nbsp;
+    <img src="/libre/images/libre_help_off.png"
+         alt="More information about the Unrestricted License"
+         title="Please fill out the required fields to describe your data." /></h3>
+<p><em>* Indicates a required  field</em></p>
+</form>
+<!-- end Libre PIC Licensing and Badging generator form-->
+
+
+<style type="text/css">
+
+    #piczero_htmlblob {
+        position: relative;
+        width:75%;
+        height:300px;
+        border:1px solid #ccc;
+        margin:5px;
+        
+}
+
+    #picccby_htmlblob {
+        position: relative;
+        width:75%;
+        height:300px;
+        border:1px solid #ccc;
+        margin:5px;
+
+}
+
+	.cc_application_form{
+		position:relative;
+		border:1px solid #ccc;
+		margin-bottom:10px;
+	}
+
+        .cc_application_form label{
+            position: relative;
+            font-weight:bold;
+
+        }
+
+           #form_1{
+
+}
+        #form_2{
+         position:relative;
+         display:none;
+}
+}
+</style>
+
+<!-- PIC CC ZERO FORM -->
+<div id="form_1" class="cc_application_form">
+	<div id="form1Container">
+		{% with "form1" as formID %}
+		{% with form1 as dataForm %}
+			{% include 'form_template.html' %}
+		{% endwith %}
+		{% endwith %}
+	</div>
+	
+	<p><input type="checkbox" id="piczeroAgreement"/> I have read and agree to the above terms and restrictions.</p>
+	<p id="errorPICZeroForm" style="color:red;"></p>
+	
+	<h3>Generate Your Badge</h3>
+            
+	<p><em>NOTE: Your badge will be displayed below after completing this form and clicking the Create Badge button.</em></p>
+
+	<div id="piczero_preview" style="display: none;">
+	  <div id="piczero_html_preview" > <!-- style="display: none;"-->			
+			-- HTML Preview goes here --			
+		</div>	
+
+		<p id="piczero_code" > <!--style="width: 300px; height: 100px; margin: 20px 0; padding: 10px;">-->
+			<!---- PIC Zero code goes here -- -->
+			<br />
+			<em>Copy and paste the code below into your web page to display this license.</em><br /><br />
+			<textarea id="piczero_htmlblob" name="badgeblob">
+			</textarea>
+		</p>	
+	</div>	
+	
+	<p>
+		<input style="background: #F90;" type="button" value="Create Badge" onclick="javascript:LIBRE.preview1();" />
+		<input type="button" value="Clear This Form" onclick="clearForm('form1');"/>
+	</p>	
+	<!-- END FORM WAS HERE -->
+
+</div>
+<!-- END OF PIC CC ZERO FORM DIV -->
+
+<!-- PIC CC BY FORM -->
+<div id="form_2" class="cc_application_form">
+
+	<div id="form2Container">
+		{% with "form2" as formID %}
+		{% with form2 as dataForm %}
+			{% include 'form_template.html' %}
+		{% endwith %}
+		{% endwith %}
+	</div>
+	
+	<p><input type="checkbox" id="picccbyAgreement"/> I have read and agree to the above terms and restrictions.</p>
+	<p id="errorPICCCByForm" style="color:red;"></p>
+	
+	<h3>Generate Your Badge </h3>
+            
+	<p><em>NOTE: Your badge will be displayed below after completing this form and clicking the Create Badge button.</em></p>
+	
+	<div id="picccby_preview" style="display: none;">
+		<div id="picccby_html_preview" > <!-- style="display: none;"-->			
+			-- HTML Preview goes here --			
+		</div>	
+
+		<p id="picccby_code" > <!--style="width: 300px; height: 100px; margin: 20px 0; padding: 10px;"> -->
+			<!-- -- PIC Zero code goes here -- -->
+			<br />
+			<em>Copy and paste the code below into your web page to display this license.</em><br /><br />
+			<textarea id="picccby_htmlblob" name="badgeblob">
+			</textarea>
+		</p>	
+	</div>	
+	<p>
+		<input style="background: #F90;" type="button" value="Create Badge" onclick="javascript:LIBRE.preview2();" />
+		<input type="button" value="Clear This Form" onclick="clearForm('form2')"/>
+	</p>
+	
+	<!-- END FORM WAS HERE -->
+
+	
+</div>
+	<!-- END OF PIC CC BY FORM DIV -->
+
+</div>
+<!-- end form container div -->
+
+{% endblock %}
