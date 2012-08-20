@@ -30,7 +30,7 @@ Badging your data with a Creative Commons license is one important step in contr
 ### Credit
 
 This software was developed at the National Snow and Ice Data Center under NSF award number ARC 0946625.
-This is a student software project.
+This was a student software project.
 
 
 
